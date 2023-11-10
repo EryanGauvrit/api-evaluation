@@ -12,7 +12,7 @@ router.get('/', async function(req, res){
             attributes: ['id', 'title', 'price', 'stock'], 
             include: {
                 model : Tag,
-                through: 'producttag',
+                through: 'ProductTag',
                 as: 'tags'
             },
             // offset: 5, 
@@ -46,7 +46,7 @@ router.get('/:id', async function(req, res){
             },
             include: {
             model : Tag,
-            through: 'producttag',
+            through: 'ProductTag',
             as: 'tags'
             }
         })

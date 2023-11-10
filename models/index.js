@@ -9,6 +9,9 @@ const ShoppingCart = require('./ShoppingCart');
 Product.belongsToMany(Tag, { through: 'ProductTag'});
 Tag.belongsToMany(Product, { through: 'ProductTag'});
 
+Product.belongsTo(ShoppingCart)
+ShoppingCart.hasMany(Product)
+
 User.hasMany(ShoppingCart);
 ShoppingCart.belongsTo(User);
 
